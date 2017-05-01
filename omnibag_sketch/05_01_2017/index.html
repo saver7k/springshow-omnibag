@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Omnibag Project</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+<div id="container"></div>
+
+<div class="page" id="a">
+
+
+
+  <div class="sidenav" id="mySidenav">
+
+      <div class="sidenav-top">
+
+        <div class="sidenav-profile-login">
+          <div class="nav-profile">
+            <img src="assets/images/jinho.png" alt="" class="grid-item-img" width="48" height="48" />
+          </div>
+          <div class="nav-profile-name">Jin Ho Lee <br style ="color: #4C556A;">Facebook connected</br></div>
+          <div><i class="material-icons" id="arrow-down">keyboard_arrow_down</i></div>
+        </div>
+
+
+        <div class="feature-list"><i class="material-icons sidenav-icons">palette</i>My backpack</div>
+        <div class="feature-list"><i class="material-icons sidenav-icons">favorite</i>Favorites</div>
+        <div class="feature-list"><i class="material-icons sidenav-icons">people</i>Friends</div>
+        <div class="feature-list"><i class="material-icons sidenav-icons">settings</i>Settings</div>
+
+      
+      </div>
+
+      <div class="sidenav-bottom">
+
+        <div class="notification">
+          <div class="push-title">Push Notifications</div>
+          <div class="push-active">Active</div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <div class="slider round"></div>
+          </label>
+        </div>  
+
+      <div class="all-push-message">
+        <div class="push-message">You earned first challenger badge!</div>
+        <div class="push-time">Saturday at 1:00pm</div>      
+      </div>
+
+      <div class="all-push-message">
+        <div class="push-message">You reached 300 ft.</div>
+        <div class="push-time">Saturday at 11:15am</div>      
+      </div>
+
+      <div class="all-push-message">
+        <div class="push-message">You are at San Bruno Mountain.</div>
+        <div class="push-time">Saturday at 10:30am</div>      
+      </div>
+
+      <div class="all-push-message">
+        <div class="push-message">Hiking mode has been activated.</div>
+        <div class="push-time">Saturday at 10am</div>      
+      </div>
+
+      </div>
+
+    <div class="sidenav-container">
+    <span onclick="toggleNav()" class="sidenav-handle">☰</span>
+    </div>
+  
+  </div> 
+  
+
+<div class="window" id="mainWindow">
+  
+  <div class="sidenav-favorite"><i class="material-icons top-icon-favorite">favorite_border</i></div>
+
+  <div class="view-top">
+      <div class="backpack-name">
+        <div>Laptop backpack</div>
+        <div class="backpack-brand">Leon Red Edition</div>
+      </div>
+      <img src="assets/images/original_backpack.png" alt="" id="red-backpack"/> 
+  </div>
+  
+  <div class="view-bottom" data-page="0">
+      <div class="board board-nav"> 
+        <div class="board-nav-indicator"></div>
+          <div class="board-nav-buttons">
+            <div class="grid-item-theme align-left-board">Color</div>
+            <div class="grid-item-theme align-left-board">Pattern</div>
+            <div class="grid-item-theme align-left-board">Activity</div>
+            <div class="grid-item-theme drag-to-top"></div>
+            <div class="grid-item-theme align-right-board">
+              <div><i class="material-icons main-board-icons expand-palette">all_out</i></div>
+              <div class="self-camera"><a href="camera.html"><i class="material-icons main-board-icons">recent_actors</i></a></div>
+            </div>
+          </div>
+      </div>
+
+
+    <div class="board-pages">
+
+      <div class="board-page">
+
+        <div class="grid-item-theme" id="dropdown-menu"><button id="themeBtn" class="theme-warm">Warm</button><i class="material-icons">keyboard_arrow_down</i></div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal-inside">
+  <span class="close-theme">&times;</span>
+
+  <div class="modal-content-theme">
+    <div class="theme-list-dropdown">
+      <div class="theme-list-name" id="all-theme-list-name">All</div>
+      <div class="theme-list-name">Bright</div>
+      <div class="theme-list-name">Dark</div>
+      <div class="theme-list-name" id="warm-theme-list-name">Warm</div>
+      <div class="theme-list-name">Cool</div>
+      <div class="theme-list-name">Pastel</div>
+      <div class="theme-list-name">Neon</div>
+    </div>
+  </div>
+
+</div>
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Trending</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item grid-beige">
+            <img src="assets/images/beige_color.png" alt="" class="grid-item-img" />   
+            <div class="grid-item-content">
+              Beige
+            </div>
+          </div>
+
+          <div class="grid-item grid-camel">
+            <img src="assets/images/camel_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Camel
+            </div>
+          </div>
+
+          <div class="grid-item grid-salmon">
+            <img src="assets/images/salmon_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Salmon Pink
+            </div>
+          </div>
+
+          <div class="grid-item grid-navajo">
+            <img src="assets/images/navajo_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Navajo White
+            </div>
+          </div>
+
+          <div class="grid-item grid-niagara">
+            <img src="assets/images/niagara_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Niagara
+            </div>
+          </div>
+
+          <div class="grid-item grid-primrose">
+            <img src="assets/images/primrose_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Primrose
+            </div>
+          </div>
+
+          <div class="grid-item grid-lapis">
+            <img src="assets/images/lapis_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Lapis Blue
+            </div>
+          </div>
+
+
+        </div>
+        
+
+        <div class="after-first-palette">
+          <div class="grid-item-theme" id="align-left">Newly added</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div> 
+
+
+        <div class="grid-row">
+          <div class="grid-item grid-pale">
+            <img src="assets/images/pale_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Pale Blue
+            </div>
+          </div>
+
+          <div class="grid-item grid-moss">
+            <img src="assets/images/moss_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Moss Green
+            </div>
+          </div>
+
+          <div class="grid-item grid-melon">
+            <img src="assets/images/melon_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Melon
+            </div>
+          </div>
+
+          <div class="grid-item grid-chiffon">
+            <img src="assets/images/chiffon_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Chiffon
+            </div>
+          </div>
+
+          <div class="grid-item grid-island">
+            <img src="assets/images/island_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Island
+            </div>
+          </div>
+
+          <div class="grid-item grid-dogwood">
+            <img src="assets/images/dogwood_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Dogwood
+            </div>
+          </div>
+
+          <div class="grid-item grid-greenery">
+            <img src="assets/images/greenery_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Greenery
+            </div>
+          </div>
+
+        </div>
+        
+
+        <div class="after-first-palette">
+          <div class="grid-item-theme" id="align-left">All Warm Colors</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>    
+        <div class="grid-row">
+
+          <div class="grid-item grid-ivory">
+            <img src="assets/images/ivory_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Ivory
+            </div>
+          </div>
+
+          <div class="grid-item grid-honeydew">
+            <img src="assets/images/honeydew_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Honeydew
+            </div>
+          </div>
+
+          <div class="grid-item grid-lavender">
+            <img src="assets/images/lavender_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Lavender
+            </div>
+          </div>
+
+          <div class="grid-item grid-canary">
+            <img src="assets/images/canary_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Canary
+            </div>
+          </div>
+
+          <div class="grid-item grid-hazelnut">
+            <img src="assets/images/hazelnut_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Hazelnut
+            </div>
+          </div>
+
+          <div class="grid-item grid-kale">
+            <img src="assets/images/kale_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Kale
+            </div>
+          </div>
+
+          <div class="grid-item grid-sharkskin">
+            <img src="assets/images/sharkskin_color.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content sharkskin">
+              Sharkskin
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="board-page">
+        <div class="grid-item-theme" id="dropdown-menu">Modern<i class="material-icons">keyboard_arrow_down</i></div>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Trending</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-pattern-board grid-camouflage">
+            <img src="assets/images/camouflage_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Camouflage
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-woods">
+            <img src="assets/images/woods_pattern_board.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Woods
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rounded">
+            <img src="assets/images/rounded_eyes_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rounded Eyes
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rain">
+            <img src="assets/images/rain_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rain
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-ring">
+            <img src="assets/images/ring_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Ring
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-ico">
+            <img src="assets/images/ico_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Ico
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-cube">
+            <img src="assets/images/cube_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Cube
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Newly Added</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-pattern-board grid-suburban">
+            <img src="assets/images/suburban_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Suburban Life
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-geo">
+            <img src="assets/images/geo_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Geo
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-build">
+            <img src="assets/images/build_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Build
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-organic">
+            <img src="assets/images/organic_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Organic
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rye">
+            <img src="assets/images/rye_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rye
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-wheel">
+            <img src="assets/images/wheel_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Wheel
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-wing">
+            <img src="assets/images/wing_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Wing
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">All Modern Patterns</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-pattern-board grid-trans">
+            <img src="assets/images/trans_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Trans
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-hugo">
+            <img src="assets/images/hugo_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Hugo
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-roses">
+            <img src="assets/images/roses_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Roses
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-observer">
+            <img src="assets/images/observer_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Observer
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-farmto">
+            <img src="assets/images/farmto.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Farmto
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rosesi">
+            <img src="assets/images/rosesi.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rosesi
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rope">
+            <img src="assets/images/rope.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rope
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="board-page">
+        <div class="grid-item-theme" id="dropdown-menu">Outdoor<i class="material-icons">keyboard_arrow_down</i></div>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Trending</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-activity-board">
+            <img src="assets/images/hiking_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Hiking Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/mood_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Mood Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/bike_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Bike Mode
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Newly Added</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-activity-board">
+            <img src="assets/images/laptop_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Pack up Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/urban_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Urban Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/chame_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Chameleon Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/bike_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Bike Mode
+            </div>
+          </div>
+
+        </div>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">All Outdoor Activities</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <div class="grid-row">
+          <div class="grid-item-activity-board">
+            <img src="assets/images/beach_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Beach Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/chame_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Chameleon Mode
+            </div>
+          </div>
+
+          <div class="grid-item-activity-board">
+            <img src="assets/images/pokemon_activity.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content">
+              Pokemon Go Mode
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+    
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is detail page & artist page -->
+<div class="window-recommendation page" id="b">
+  
+  <div class="view-main">
+      <div class="top-recommendation top-artist">
+        <a class="back" href="#a"><i class="material-icons main-left-arrow-artist">keyboard_arrow_left</i></a>
+        <div class="grid-item-artist text-top-center">Detail</div>
+        <i class="material-icons main-right-arrow-artist">keyboard_arrow_right</i>
+      </div>
+
+      <div class="view-top-detail">
+        <img src="assets/images/woods_pattern.png" alt="" />  
+      </div>
+
+  <div class="view-bottom-detail">
+      <div class="pattern-detail">    
+        <div class="grid-item-pattern-detail" id="align-left-pattern-detail">Woods</div>
+        <div class="grid-item-pattern-detail" id="align-right-pattern-detail" id="main-board">by  <a class="nav-link" href="#c" id="pattern-artist">Michelle McGraw</a></div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <div class="grid-item-pattern-description" id="pattern-intro">
+        <p>This beautifully designed graphic pattern is created by Michelle McGraw which gives inspiration and fresh air to many artists.</p>
+      </div>
+
+      <div class="pattern-icons">
+        <div class="pattern-comments-icon"><img src="assets/images/icon-comments.png" alt="" width="20" height="20" /></div>
+        <div class="pattern-comments-text"><a href="" class="pattern-text-click">114 comments</a></div>
+        <div class="pattern-comments-icon" id="icon-heart"><img src="assets/images/icon-heart.png" alt="" width="20" height="20" /></div>
+        <div class="pattern-comments-text" id="likes-count"><a href="" class="pattern-text-click">451 likes</a></div>
+        <div style="clear: both;"></div>
+      </div>  
+
+     <div class="grid-item-pattern-detail" id="friends-list">Friends who also use this pattern</div>
+
+      <div class="grid-row" id="grid-row-pattern-detail">
+              <div class="grid-item-pattern">
+                <img src="assets/images/annie.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Annie
+                </div>
+              </div>
+
+              <div class="grid-item-pattern">
+                <img src="assets/images/daniel.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Daniel
+                </div>
+              </div>
+
+              <div class="grid-item-pattern">
+                <img src="assets/images/taylor.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Taylor
+                </div>
+              </div>
+
+              <div class="grid-item-pattern">
+                <img src="assets/images/hannah.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Hannah
+                </div>
+              </div>
+
+              <div class="grid-item-pattern">
+                <img src="assets/images/chelsea.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Chelsea
+                </div>
+              </div>
+
+              <div class="grid-item-pattern">
+                <img src="assets/images/andy.png" alt="" class="grid-item-img" />     
+                <div class="grid-item-pattern-friends">
+                  Andy
+                </div>
+              </div>
+        </div>
+    
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="window-recommendation page" id="c">
+  
+  <div class="view-main">
+      <div class="top-recommendation top-artist">
+        <a class="back" href="#b"><i class="material-icons main-left-arrow-artist">keyboard_arrow_left</i></a>
+        <div class="grid-item-artist text-top-center">Profile</div>
+        <i class="material-icons main-right-arrow-artist">keyboard_arrow_right</i>
+      </div>
+
+      <div class="view-top-artist">
+        <img src="assets/images/tattoo_background.png" alt="" />  
+      </div>
+
+      <div class="artist-position">
+        <div class="artist-profile">
+          <img src="assets/images/michelle_artist.png" alt="" class="artist-img" />     
+        </div>
+
+        <div class="artist-profile">
+          <div class="grid-item-artist-name">Michelle McGraw</div>   
+        </div>
+
+        <div class="artist-profile">
+          <div class="grid-item-artist-job">Pattern Artist</div>  
+        </div>
+
+        <div class="artist-profile">
+          <div class="grid-item-artist-job-desc">Pattern artist and fashion lover living in New York.<br> I'm passionate about helping young creatives.</div>  
+        </div>
+
+        <div class="artist-profile">
+          <a href="" class="btn-follow">Follow</a>
+        </div>
+      </div>
+
+      <div class="artist-social-info">
+        <div class="artist-social-info-inside">
+          <div>20</div>
+          <div class="artist-text-info">Patterns</div>
+        </div>
+
+        <div class="artist-social-info-inside">
+          <div>668</div>
+          <div class="artist-text-info">Followers</div>
+        </div>
+
+        <div class="artist-social-info-inside">
+          <div>155</div>
+          <div class="artist-text-info">Following</div>
+        </div>
+      </div> 
+
+
+      <div class="artist-work-list-palette">
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme artist-work-list-main" id="align-left">TOP FAVORITES</div>
+          <div class="grid-item-theme artist-work-list" id="align-left">MODERN</div>
+          <div class="grid-item-theme artist-work-list" id="align-left">RETRO</div>
+          <div class="grid-item-theme artist-work-list" id="align-left">SHAPE</div>
+          <div class="grid-item-theme artist-work-list" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+      
+        <div class="grid-row-theme">
+          <div class="grid-item-theme">
+            <img src="assets/images/africa_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Africa
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/icecreamy_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Ice Cream
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/pear_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Pear
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/tattoo_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Tattoo
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/trans_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Trans
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/rosesi.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Rosesi
+            </div>
+          </div>
+
+          <div class="grid-item-theme">
+            <img src="assets/images/suburban_pattern.png" alt="" class="grid-item-img" />     
+            <div class="grid-item-content list-recommendation">
+              Suburban Life
+            </div>
+          </div>
+        
+        </div>
+
+
+      </div>
+    
+
+    
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Dropdown Theme -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("themeBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close-theme")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}   
+</script>
+
+
+
+<!-- Mr Eaves Font -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://use.typekit.net/hoc0zbs.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <script>
+  function toggleNav() {
+      $("body").toggleClass("navopen");
+  }
+
+  $(function(){
+    $(".align-left-board").on("click",function(){
+      var id = $(".board-nav .align-left-board").index($(this));
+      $(".view-bottom").attr("data-page",id);
+      // console.log($(".view-bottom").data())
+    })
+  })
+  </script>
+
+<!-- Change backpack status when selected an palette-->
+  
+  <script>
+
+    $(".board-pages .grid-item").on("click",function(){
+      $(this).parents('.board-page').find('.pick-palette').removeClass("pick-palette");
+    $(this).addClass( "pick-palette" );
+    });
+
+    $(".board-pages .grid-item-pattern-board").on("click",function(){
+      $(this).parents('.board-page').find('.pick-palette-pattern').removeClass("pick-palette-pattern");
+    $(this).addClass( "pick-palette-pattern" );
+    });
+
+  </script>
+
+
+<!-- WHAT???? -->
+
+
+
+<!-- ???????? -->
+
+
+<!-- Backpack changes color!!!!!!!!!!!!!!!!!!!!!! -->
+  
+  <script>
+
+
+    $(".board-pages .grid-beige").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/beige_backpack.png");
+    });
+
+    $(".board-pages .grid-salmon").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/salmon_backpack.png");
+    });
+
+    $(".board-pages .grid-camel").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/camel_backpack.png");
+    });
+
+    $(".board-pages .grid-navajo").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/navajo_backpack.png");
+    });
+
+    $(".board-pages .grid-niagara").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/niagara_backpack.png");
+    });
+
+    $(".board-pages .grid-primrose").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/primrose_backpack.png");
+    });
+
+    $(".board-pages .grid-lapis").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/lapis_backpack.png");
+    });
+
+    $(".board-pages .grid-pale").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/pale_backpack.png");
+    });
+
+    $(".board-pages .grid-moss").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/moss_backpack.png");
+    });
+
+    $(".board-pages .grid-melon").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/melon_backpack.png");
+    });
+
+    $(".board-pages .grid-chiffon").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/chiffon_backpack.png");
+    });
+
+    $(".board-pages .grid-island").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/island_backpack.png");
+    });
+
+    $(".board-pages .grid-dogwood").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/dogwood_backpack.png");
+    });
+
+    $(".board-pages .grid-greenery").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/greenery_backpack.png");
+    });
+
+    $(".board-pages .grid-ivory").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/ivory_backpack.png");
+    });
+
+    $(".board-pages .grid-honeydew").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/honeydew_backpack.png");
+    });
+
+    $(".board-pages .grid-lavender").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/lavender_backpack.png");
+    });
+
+    $(".board-pages .grid-canary").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/canary_backpack.png");
+    });
+
+    $(".board-pages .grid-hazelnut").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/hazelnut_backpack.png");
+    });
+
+    $(".board-pages .grid-kale").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/kale_backpack.png");
+    });
+
+    $(".board-pages .grid-sharkskin").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/sharkskin_backpack.png");
+    });
+  </script>
+
+<!-- Backpack changes pattern!!!!!!!!!!!!!!!!!!!!!! -->
+  
+  <script>
+
+
+    $(".board-pages .grid-camouflage").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/camou_backpack.png");
+    });
+
+    $(".board-pages .grid-woods").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/woods_backpack.png");
+    });
+
+    $(".board-pages .grid-rounded").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/eyes_backpack.png");
+    });
+
+    $(".board-pages .grid-rain").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/rain_backpack.png");
+    });
+
+    $(".board-pages .grid-ring").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/ring_backpack.png");
+    });
+
+    $(".board-pages .grid-ico").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/ico_backpack.png");
+    });
+
+    $(".board-pages .grid-cube").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/cube_backpack.png");
+    });
+
+    $(".board-pages .grid-suburban").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/sub_backpack.png");
+    });
+
+    $(".board-pages .grid-geo").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/geo_backpack.png");
+    });
+
+    $(".board-pages .grid-build").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/build_backpack.png");
+    });
+
+    $(".board-pages .grid-organic").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/organic_backpack.png");
+    });
+
+    $(".board-pages .grid-rye").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/rye_backpack.png");
+    });
+
+    $(".board-pages .grid-wheel").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/wheel_backpack.png");
+    });
+
+    $(".board-pages .grid-wing").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/wing_backpack.png");
+    });
+
+    $(".board-pages .grid-trans").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/trans_backpack.png");
+    });
+
+    $(".board-pages .grid-hugo").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/hugo_backpack.png");
+    });
+
+    $(".board-pages .grid-roses").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/roses_backpack.png");
+    });
+
+    $(".board-pages .grid-observer").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/observer_backpack.png");
+    });
+
+    $(".board-pages .grid-farmto").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/farmto_backpack.png");
+    });
+
+    $(".board-pages .grid-rosesi").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/rosesi_backpack.png");
+    });
+
+    $(".board-pages .grid-rope").on("click",function(){
+      $("#red-backpack").attr('src', "assets/images/rope_backpack.png");
+    });
+  </script>
+
+
+
+  <script>
+
+    $(function(){
+      $(".board-page").on("scroll",function(e){
+        console.log(e)
+      })
+    })
+
+    var isdragging = false;
+    var ystart=0;
+    $(".drag-to-top").on("touchstart mousedown",function(e){
+      isdragging = true;
+      ystart = e.pageY;
+      console.log(e)
+    }).on("touchend mouseup mouseleave",function(e){
+      if(!isdragging) return
+      isdragging = false;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","").removeClass("dragged");
+        $(".view-bottom").css("height","")
+      } else {
+        $(".view-top").css("height","36px").addClass("dragged");
+        $(".view-bottom").css("height","calc(100% - 36px)")
+      }
+      console.log(e)
+    }).on("touchmove mousemove",function(e){
+      if(!isdragging) return;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","calc(36px + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 36px - "+(e.pageY-ystart)+"px)")
+      } else {
+        $(".view-top").css("height","calc(40vh + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 40vh - "+(e.pageY-ystart)+"px)")
+      }
+      console.log(e)
+    })
+
+
+  </script>
+
+
+<!-- Hello -->
+  <script>
+
+    var isdragging = false;
+    var ystart=0;
+
+    var isdragging = false;
+    var ystart=0;
+    $(".expand-palette").on("touchstart mousedown",function(e){
+      isdragging = true;
+      ystart = e.pageY;
+      console.log(e)
+    }).on("touchend mouseup mouseleave",function(e){
+      if(!isdragging) return
+      isdragging = false;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","").removeClass("dragged");
+        $(".view-bottom").css("height","")
+      } else {
+        $(".view-top").css("height","36px").addClass("dragged");
+        $(".view-bottom").css("height","calc(100% - 36px)")
+      }
+      console.log(e)
+    }).on("touchmove mousemove",function(e){
+      if(!isdragging) return;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","calc(36px + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 36px - "+(e.pageY-ystart)+"px)")
+      } else {
+        $(".view-top").css("height","calc(40vh + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 40vh - "+(e.pageY-ystart)+"px)")
+      }
+      console.log(e)
+    })
+
+
+  </script>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="assets/js/page.js"></script>
+
+
+
+</body>
+</html>      
