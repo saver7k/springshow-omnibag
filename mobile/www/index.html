@@ -70,7 +70,20 @@
     }   
     </script>
   <!-- Jin Ho Lee added this: Dropdown Theme -->
-  
+
+  <!-- Jin Ho Lee added this: Change backpack status when selected an palette-->
+  <script>
+    $(".board-pages .grid-item").on("click",function(){
+      $(this).parents('.board-page').find('.pick-palette').removeClass("pick-palette");
+    $(this).addClass( "pick-palette" );
+    });
+
+    $(".board-pages .grid-item-pattern-board").on("click",function(){
+      $(this).parents('.board-page').find('.pick-palette-pattern').removeClass("pick-palette-pattern");
+    $(this).addClass( "pick-palette-pattern" );
+    });
+  </script>
+  <!-- Jin Ho Lee added this: Change backpack status when selected an palette-->
 
 
   <!-- Jin Ho Lee added this: Move different palette -->
@@ -134,9 +147,53 @@
     </script>
   <!-- Jin Ho Lee added this: Extend Palette -->
 
+
+
+  <!-- Jin Ho Lee added this: Extend -->
+  <script>
+
+    var isdragging = false;
+    var ystart=0;
+
+    var isdragging = false;
+    var ystart=0;
+    $(".expand-palette").on("touchstart mousedown",function(e){
+      isdragging = true;
+      ystart = e.pageY;
+      console.log(e)
+    }).on("touchend mouseup mouseleave",function(e){
+      if(!isdragging) return
+      isdragging = false;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","").removeClass("dragged");
+        $(".view-bottom").css("height","")
+      } else {
+        $(".view-top").css("height","36px").addClass("dragged");
+        $(".view-bottom").css("height","calc(100% - 36px)")
+      }
+      console.log(e)
+    }).on("touchmove mousemove",function(e){
+      if(!isdragging) return;
+
+      if($(".view-top").hasClass("dragged")){
+        $(".view-top").css("height","calc(36px + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 36px - "+(e.pageY-ystart)+"px)")
+      } else {
+        $(".view-top").css("height","calc(40vh + "+(e.pageY-ystart)+"px)")
+        $(".view-bottom").css("height","calc(100% - 40vh - "+(e.pageY-ystart)+"px)")
+      }
+      console.log(e)
+    })
+  </script>
+  <!-- Jin Ho Lee added this: Extend -->
+
+
+
   <!-- Jin Ho Lee added this: jQuery -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <!-- Jin Ho Lee added this: jQuery -->
+
 
 
 
