@@ -1,30 +1,6 @@
 <ion-view view-title="{{device.name}}">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">{{device.name}}</div>
-      <div class="item item-body">
-          {{device.id}}
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Services</div>
-        <ion-list>
-          <ion-item ng-repeat="service in device.services">
-            {{service}}
-          </ion-item>
-        </ion-list>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Characteristics</div>
-      <ion-list>
-        <ion-item ng-repeat="char in device.characteristics">
-          Service: {{char.service}}<br/>
-          Characteristic: {{char.characteristic}}<br/>
-          Properties: {{char.properties}}<br/>
-          Descriptors: {{char.descriptors}}<br/>
-        </ion-item>
-      </ion-list>
-    </div>
+    
     <button class="button button-positive button-block" ng-click="blink()">Blink</button>
     <br/>
     <br/>
