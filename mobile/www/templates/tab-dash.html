@@ -1,11 +1,586 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <div class="view-top">
-      <div class="backpack-name">
-        <div>Laptop backpack</div>
-        <div class="backpack-brand">Leon Red Edition</div>
-      </div>
-      <img src="img/bp/original_backpack.png" alt="" class="backpacks"/>
-    </div>
+
+
+	<div class="window" id="mainWindow">
+
+	    <div class="view-top">
+	      <div class="backpack-name">
+	        <div>Laptop backpack</div>
+	        <div class="backpack-brand">Leon Red Edition</div>
+	      </div>
+	      <img src="img/bp/original_backpack.png" alt="" class="backpacks"/>
+	    </div>
+
+	  <div class="view-bottom" data-page="0">
+	      <div class="board board-nav"> 
+	        <div class="board-nav-indicator"></div>
+	          <div class="board-nav-buttons">
+	            <div class="grid-item-theme align-left-board">Color</div>
+	            <div class="grid-item-theme align-left-board">Pattern</div>
+	            <div class="grid-item-theme align-left-board">Activity</div>
+	            <div class="grid-item-theme drag-to-top"></div>
+	            <div class="grid-item-theme align-right-board">
+	              <div><i class="material-icons main-board-icons expand-palette">all_out</i></div>
+	              <div class="self-camera"><a href="camera.html"><i class="material-icons main-board-icons">recent_actors</i></a></div>
+	            </div>
+	          </div>
+	      </div>
+
+
+	    <div class="board-pages">
+	      	<!-- <div class="board-page"> -->
+	      	<ion-scroll scrollY="true" overflow-scroll="false" class="board-page">
+
+		        <div class="grid-item-theme" id="dropdown-menu">
+		        	<button id="themeBtn" class="theme-warm">Warm</button>
+		        	<i class="material-icons">keyboard_arrow_down</i>
+		        </div>  
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal-inside">
+	  <span class="close-theme">&times;</span>
+
+	  <div class="modal-content-theme">
+	    <div class="theme-list-dropdown">
+	      <div class="theme-list-name" id="all-theme-list-name">All</div>
+	      <div class="theme-list-name">Bright</div>
+	      <div class="theme-list-name">Dark</div>
+	      <div class="theme-list-name" id="warm-theme-list-name">Warm</div>
+	      <div class="theme-list-name">Cool</div>
+	      <div class="theme-list-name">Pastel</div>
+	      <div class="theme-list-name">Neon</div>
+	    </div>
+	  </div>
+
+	</div>
+
+
+		        <div class="trending-above-palette">
+		          <div class="grid-item-theme" id="align-left">Trending</div>
+		          <div class="grid-item-theme" id="align-right">See all</div>
+		          <div style="clear: both;"></div>
+		        </div>   
+
+
+		        <!-- <div class="grid-row"> -->
+		        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+		          
+		          <div class="grid-item grid-beige">
+		            <img src="img/bp/beige_color.png" alt="" class="grid-item-img" />   
+		            <div class="grid-item-content">
+		              Beige
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-camel">
+		            <img src="img/bp/camel_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Camel
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-salmon">
+		            <img src="img/bp/salmon_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Salmon Pink
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-navajo">
+		            <img src="img/bp/navajo_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Navajo White
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-niagara">
+		            <img src="img/bp/niagara_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Niagara
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-primrose">
+		            <img src="img/bp/primrose_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Primrose
+		            </div>
+		          </div>
+
+		          <div class="grid-item grid-lapis">
+		            <img src="img/bp/lapis_color.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Lapis Blue
+		            </div>
+		          </div>
+		        
+<!-- 		        </div> -->
+				</ion-scroll>	
+        
+	        <div class="after-first-palette">
+	          <div class="grid-item-theme" id="align-left">Newly added</div>
+	          <div class="grid-item-theme" id="align-right">See all</div>
+	          <div style="clear: both;"></div>
+	        </div> 
+
+
+<!-- 	        <div class="grid-row"> -->
+	        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+       
+	          <div class="grid-item grid-pale">
+	            <img src="img/bp/pale_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Pale Blue
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-moss">
+	            <img src="img/bp/moss_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Moss Green
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-melon">
+	            <img src="img/bp/melon_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Melon
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-chiffon">
+	            <img src="img/bp/chiffon_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Chiffon
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-island">
+	            <img src="img/bp/island_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Island
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-dogwood">
+	            <img src="img/bp/dogwood_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Dogwood
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-greenery">
+	            <img src="img/bp/greenery_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Greenery
+	            </div>
+	          </div>
+
+<!--             </div> -->
+	        </ion-scroll>	
+        
+
+	        <div class="after-first-palette">
+	          <div class="grid-item-theme" id="align-left">All Warm Colors</div>
+	          <div class="grid-item-theme" id="align-right">See all</div>
+	          <div style="clear: both;"></div>
+	        </div>    
+
+<!--         	<div class="grid-row"> -->
+    		<ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+	          <div class="grid-item grid-ivory">
+	            <img src="img/bp/ivory_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Ivory
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-honeydew">
+	            <img src="img/bp/honeydew_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Honeydew
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-lavender">
+	            <img src="img/bp/lavender_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Lavender
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-canary">
+	            <img src="img/bp/canary_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Canary
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-hazelnut">
+	            <img src="img/bp/hazelnut_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Hazelnut
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-kale">
+	            <img src="img/bp/kale_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content">
+	              Kale
+	            </div>
+	          </div>
+
+	          <div class="grid-item grid-sharkskin">
+	            <img src="img/bp/sharkskin_color.png" alt="" class="grid-item-img" />     
+	            <div class="grid-item-content sharkskin">
+	              Sharkskin
+	            </div>
+	          </div>
+			
+<!-- 			</div> -->
+			</ion-scroll>
+
+        	<!-- </div> -->
+        	</ion-scroll>
+
+
+    <!-- <div class="board-page"> -->
+    <ion-scroll scrollY="true" overflow-scroll="false" class="board-page">
+        <div class="grid-item-theme" id="dropdown-menu">Modern<i class="material-icons">keyboard_arrow_down</i></div>
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Trending</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <!-- <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+        	
+          <div class="grid-item-pattern-board grid-camouflage">
+            <img src="img/bp/camouflage_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Camouflage
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-woods">
+            <img src="img/bp/woods_pattern_board.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Woods
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rounded">
+            <img src="img/bp/rounded_eyes_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rounded Eyes
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rain">
+            <img src="img/bp/rain_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rain
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-ring">
+            <img src="img/bp/ring_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Ring
+            <a class="nav-link" href="#b"><i class="material-icons more-icon">more_horiz</i></a>
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-ico">
+            <img src="img/bp/ico_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Ico
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-cube">
+            <img src="img/bp/cube_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Cube
+            </div>
+          </div>
+
+		</ion-scroll>
+<!--         </div> -->
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Newly Added</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+<!--         <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+          <div class="grid-item-pattern-board grid-suburban">
+            <img src="img/bp/suburban_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Suburban Life
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-geo">
+            <img src="img/bp/geo_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Geo
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-build">
+            <img src="img/bp/build_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Build
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-organic">
+            <img src="img/bp/organic_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Organic
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rye">
+            <img src="img/bp/rye_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rye
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-wheel">
+            <img src="img/bp/wheel_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Wheel
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-wing">
+            <img src="img/bp/wing_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Wing
+            </div>
+          </div>
+
+		</ion-scroll>
+        <!-- </div> -->
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">All Modern Patterns</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+		
+<!--         <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+          <div class="grid-item-pattern-board grid-trans">
+            <img src="img/bp/trans_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Trans
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-hugo">
+            <img src="img/bp/hugo_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Hugo
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-roses">
+            <img src="img/bp/roses_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Roses
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-observer">
+            <img src="img/bp/observer_pattern.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Observer
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-farmto">
+            <img src="img/bp/farmto.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Farmto
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rosesi">
+            <img src="img/bp/rosesi.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rosesi
+            </div>
+          </div>
+
+          <div class="grid-item-pattern-board grid-rope">
+            <img src="img/bp/rope.png" alt="" class="grid-item-img-pattern" />     
+            <div class="grid-item-content">
+              Rope
+            </div>
+          </div>
+
+
+        <!-- </div> -->
+		</ion-scroll>
+    </ion-scroll>
+
+<!-- End of Pattern Palette -->
+
+<!-- ACTIVITY PALETTE START -->
+    
+
+<!--     <div class="board-page"> -->
+  	<ion-scroll scrollY="true" overflow-scroll="false" class="board-page">
+
+        <div class="grid-item-theme" id="dropdown-menu">Outdoor<i class="material-icons">keyboard_arrow_down</i></div>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Trending</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+<!--         <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">	
+          
+		      <div class="grid-item-activity-board">
+		        <img src="img/bp/hiking_activity.png" alt="" class="grid-item-img" />     
+		        <div class="grid-item-content">
+		          Hiking Mode
+		        </div>
+		      </div>
+
+		      <div class="grid-item-activity-board">
+		        <img src="img/bp/mood_activity.png" alt="" class="grid-item-img" />     
+		        <div class="grid-item-content">
+		          Mood Mode
+		        </div>
+		      </div>
+
+		      <div class="grid-item-activity-board">
+		        <img src="img/bp/bike_activity.png" alt="" class="grid-item-img" />     
+		        <div class="grid-item-content">
+		          Bike Mode
+		        </div>
+		      </div>
+
+        </ion-scroll>
+
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">Newly Added</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+        <!-- <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/laptop_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Pack up Mode
+		            </div>
+		          </div>
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/urban_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Urban Mode
+		            </div>
+		          </div>
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/chame_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Chameleon Mode
+		            </div>
+		          </div>
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/bike_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Bike Mode
+		            </div>
+		          </div>
+
+        </ion-scroll>
+
+        <div class="trending-above-palette">
+          <div class="grid-item-theme" id="align-left">All Outdoor Activities</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+<!--         <div class="grid-row"> -->
+        <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/beach_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Beach Mode
+		            </div>
+		          </div>
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/chame_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Chameleon Mode
+		            </div>
+		          </div>
+
+		          <div class="grid-item-activity-board">
+		            <img src="img/bp/pokemon_activity.png" alt="" class="grid-item-img" />     
+		            <div class="grid-item-content">
+		              Pokemon Go Mode
+		            </div>
+		          </div>
+
+        </ion-scroll>
+
+    </ion-scroll>    
+  </ion-scroll>
+
+
+
+<!-- This is last div of palette  -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </ion-content>
 </ion-view>
