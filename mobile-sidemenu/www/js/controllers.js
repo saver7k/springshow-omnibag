@@ -40,7 +40,131 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+  .controller('SearchCtrl', function($scope, ble){
+    $scope.sendColor = function(val){
+      ble.sendColor( val );
+    }
+  })
+  .controller('BLECtrl', function($scope, BLE) {
 
+    // keep a reference since devices will be added
+    $scope.devices = BLE.devices;
+
+    var success = function () {
+      if ($scope.devices.length < 1) {
+        // a better solution would be to update a status message rather than an alert
+        alert("Didn't find any Bluetooth Low Energy devices.");
+      }
+    };
+
+    var failure = function (error) {
+      alert(error);
+    };
+
+    // pull to refresh
+    $scope.onRefresh = function() {
+      BLE.scan().then(
+        success, failure
+      ).finally(
+        function() {
+          $scope.$broadcast('scroll.refreshComplete');
+        }
+      )
+    }
+
+    // initial scan
+    BLE.scan().then(success, failure);
+
+  })
+  .controller('BLEDetailCtrl', function($scope, $stateParams, BLE) {
+    // ASCII only
+    var stringToBytes = function (string) {
+      var array = new Uint8Array(string.length);
+      for (var i = 0, l = string.length; i < l; i++) {
+        array[i] = string.charCodeAt(i);
+      }
+      return array.buffer;
+    };
+
+    BLE.connect($stateParams.deviceId).then(
+      function(peripheral) {
+        $scope.device = peripheral;
+      }
+    );
+    $scope.state = false;
+    $scope.sendColor = function(color){
+      $scope.state = !$scope.state;
+      var data = stringToBytes(color);
+      ble.writeWithoutResponse($scope.device.id, 'ffe0', 'ffe1', data, function(){
+        console.log('success');
+      }, function(){
+        console.log('failure');
+      });
+    };
+  })
+  .factory('BLE', function($q) {
+
+    var connected;
+
+    return {
+
+      devices: [],
+
+      scan: function() {
+        var that = this;
+        var deferred = $q.defer();
+
+        that.devices.length = 0;
+
+        // disconnect the connected device (hack, device should disconnect when leaving detail page)
+        if (connected) {
+          var id = connected.id;
+          ble.disconnect(connected.id, function() {
+            console.log("Disconnected " + id);
+          });
+          connected = null;
+        }
+
+        ble.startScan([],  /* scan for all services */
+          function(peripheral){
+            that.devices.push(peripheral);
+          },
+          function(error){
+            deferred.reject(error);
+          });
+
+        // stop scan after 5 seconds
+        setTimeout(ble.stopScan, 5000,
+          function() {
+            deferred.resolve();
+          },
+          function() {
+            console.log("stopScan failed");
+            deferred.reject("Error stopping scan");
+          }
+        );
+
+        return deferred.promise;
+      },
+      connect: function(deviceId) {
+        var deferred = $q.defer();
+
+        ble.connect(deviceId,
+          function(peripheral) {
+            alert('connected');
+            connected = peripheral;
+            deferred.resolve(peripheral);
+          },
+          function(reason) {
+            alert(reason);
+            deferred.reject(reason);
+          }
+        );
+
+        return deferred.promise;
+      }
+    };
+  })
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },

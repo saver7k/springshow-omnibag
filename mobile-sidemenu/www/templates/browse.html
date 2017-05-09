@@ -1,5 +1,15 @@
-<ion-view view-title="Browse">
+<ion-view view-title="BLE">
   <ion-content>
-    <h1>Browse</h1>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="onRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="device in devices" type="item-text-wrap" href="#/app/ble/{{device.id}}">
+        <h2>{{device.name}}</h2>
+        <p>{{device.id}} &nbsp; RSSI: {{device.rssi}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
