@@ -40,7 +40,20 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
+  .controller('OmnibagCtrl', function($scope){
+    $scope.current = 'original';
+    $scope.colors = [
+      {color: 'beige', label: 'Beige'},
+      {color: 'camel', label: 'Camel'},
+      {color: 'salmon', label: 'Salmon Pink'},
+      {color: 'navajo', label: 'Navajo White'},
+      {color: 'niagara', label: 'Niagara'},
+      {color: 'primrose', label: 'Primrose'}
+    ];
+    $scope.setColor = function(color){
+      $scope.current = color;
+    }
+  })
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
@@ -54,3 +67,4 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+

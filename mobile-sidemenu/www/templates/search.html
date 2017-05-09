@@ -16,7 +16,7 @@
     <div style="padding: 20px">
       <div>Laptop backpack</div>
       <div style="font-size: 1rem;margin-top: 0.5%;color: #EC4461;">Leon Red Edition</div>
-      <img src="img/bp/original_backpack.png" style="width: 100%"/>
+      <img src="img/bp/{{current}}_backpack.png" style="width: 100%"/>
     </div>
     <div class="tabs">
       <a class="tab-item">
@@ -38,5 +38,14 @@
         <i class="ion-camera"></i>
       </a>
     </div>
+    <ion-scroll scrollX="true" overflow-scroll="true" class="grid-row">
+
+      <div class="grid-item grid-{{color.color}}" ng-repeat="color in colors">
+        <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+        <div class="grid-item-content">
+          {{color.label}}
+        </div>
+      </div>
+    </ion-scroll>
   </ion-content>
 </ion-view>
