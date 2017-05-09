@@ -40,9 +40,21 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-  .controller('SearchCtrl', function($scope, ble){
+  .controller('SearchCtrl', function($scope, BLE){
     $scope.sendColor = function(val){
-      ble.sendColor( val );
+      BLE.sendColor( val );
+    }
+    $scope.current = 'original';
+    $scope.colors = [
+      {color: 'beige', label: 'Beige'},
+      {color: 'camel', label: 'Camel'},
+      {color: 'salmon', label: 'Salmon Pink'},
+      {color: 'navajo', label: 'Navajo White'},
+      {color: 'niagara', label: 'Niagara'},
+      {color: 'primrose', label: 'Primrose'}
+    ];
+    $scope.setColor = function(color){
+      $scope.current = color;
     }
   })
   .controller('BLECtrl', function($scope, BLE) {
@@ -178,3 +190,4 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+
