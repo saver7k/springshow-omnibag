@@ -4,15 +4,84 @@
 
 body {
   margin:0;
+  font-family: "mr-eaves-modern";  
 }
 
 /* ionic default code, but I changed it */
 
+.tabs { 
+  background-color: #262931;
+  padding-top: 0px !important;
+}
+
+.tabs:active {
+	color: #262931;
+}
+
+.hello-button {
+	border-radius: 0px 0px 2px 0px;
+}
+
+
+.tab-item {
+  color: #FFF;
+  opacity: 1.0;
+}
 
 .padding {
   padding: 0px !important;
 }
 
+.menu .bar-header {
+	background-color: #333845;
+}
+
+.bar.bar-light .title {
+	color: #FFF;
+	font-family: "mr-eaves-modern";
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+}
+
+.item {
+	border-color: #333845;
+	background-color: #333845;
+	color: #FFF;
+}
+
+.item-select:after {
+	color: #FFF;
+}
+
+.item-select select {
+	background: #333845;
+}
+
+.item-complex .item-content {
+	background-color: #333845;
+	color: #FFF;
+	font-family: "mr-eaves-modern";
+}
+
+.bar.bar-stable {
+	border-color: #FFF;
+	background-color: #FFF;
+}
+
+ion-side-menu.menu.menu-left {
+	background-color: #333845;
+	font-family: "mr-eaves-modern";
+}
+
+.item h2 {
+	color: #FFF;
+	font-family: "mr-eaves-modern";
+} 
+
+.item p {
+	color: #8A8A8A;
+}
 
 /* ionic default code, but I changed it */
 
@@ -855,11 +924,22 @@ body {
   text-transform:uppercase;
 }
 
+.need-space {
+	margin-top: 22px;
+}
+
+.need-scroll-height {
+	background-color: #262931;
+	position: absolute;
+	height: calc(100% - 140px);
+}
+
 /* More icon 오른쪽에 넣었을때 써야되는 코드 */
 
 .grid-item-content {
   height: 26px;
   position: relative;
+  color: #FFF;
 }
 
 .grid-item-content a {
@@ -1437,6 +1517,19 @@ input:checked + .slider:before {
   width: 70%;
   height: 430px;
 
+}
+
+.button {
+  background: #FF512F !important;
+  background-image: -webkit-linear-gradient(left top, #FF512F, #DD2476) !important;
+  background-image: -moz-linear-gradient(left top, #FF512F, #DD2476) !important;
+  background-image: -ms-linear-gradient(bottom right, #FF512F, #DD2476) !important;
+  background-image: -o-linear-gradient(bottom right, #FF512F, #DD2476) !important;
+  background-image: linear-gradient(bottom right, #FF512F, #DD2476) !important;
+}
+
+.button:before {
+	font-size: 24px !important;
 }
 
 /* The Close Button */
