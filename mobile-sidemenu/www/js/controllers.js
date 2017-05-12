@@ -45,14 +45,28 @@ angular.module('starter.controllers', [])
       BLE.sendColor( val );
     }
     $scope.current = 'original';
-    $scope.colors = [
+    $scope.trending = [
       {color: 'beige', label: 'Beige'},
       {color: 'camel', label: 'Camel'},
       {color: 'salmon', label: 'Salmon Pink'},
       {color: 'navajo', label: 'Navajo White'},
       {color: 'niagara', label: 'Niagara'},
-      {color: 'primrose', label: 'Primrose'}
+      {color: 'primrose', label: 'Primrose'},
+      {color: 'lapis', label: 'Lapis Blue'}
     ];
+
+        $scope.newlyadded = [
+      {color: 'pale', label: 'Pale Blue'},
+      {color: 'moss', label: 'Moss Green'},
+      {color: 'melon', label: 'Melon'},
+      {color: 'chiffon', label: 'Chiffon'},
+
+    ];
+
+        $scope.allwarm = [
+      {color: 'ivory', label: 'Ivory'}
+    ];
+
     $scope.setColor = function(color){
       $scope.current = color;
     }
