@@ -16,22 +16,84 @@
     <div style="padding: 20px">
       <div>Laptop backpack</div>
       <div style="font-size: 1rem;margin-top: 0.5%;color: #EC4461;">Leon Red Edition</div>
-      <img src="img/bp/original_backpack.png" style="width: 100%"/>
+      <img src="img/bp/{{current}}_backpack.png" style="width: 100%"/>
     </div>
 
-    <ion-list>
-      <ion-item ng-click="sendColor('RED');" class="bar-assertive">
-        <i class="ion-bag"></i> RED
-      </ion-item>
-      <ion-item ng-click="sendColor('GREEN');" class="bar-positive">
-        <i class="ion-bag"></i> GREEN
-      </ion-item>
-      <ion-item ng-click="sendColor('BLUE');" class="bar-calm">
-        <i class="ion-bag"></i> BLUE
-      </ion-item>
-      <ion-item ng-click="sendColor('OFF');" class="bar-calm">
-        <i class="ion-bag"></i> OFF
-      </ion-item>
-    </ion-list>
+    <div class="tabs">
+      <a class="tab-item button button-icon button-positive hello-button" style="background: red;">
+        Color
+      </a>
+      <a class="tab-item">
+        Pattern
+      </a>
+      <a class="tab-item">
+        Activity
+      </a>
+      <a class="tab-item">
+      </a>
+      <a class="tab-item">
+      </a>
+      <a class="tab-item" style="font-size: 20pt;">
+        <i class="ion-ios-browsers" style="margin-left: -10px;padding-right: 10px;"></i>
+        <i class="ion-camera"></i>
+      </a>
+    </div>
+
+    <ion-scroll scrollY="true" overflow-scroll="false" class="need-scroll-height">
+
+      <div class="trending-above-palette need-space">
+        <div class="grid-item-theme" id="align-left">Trending</div>
+        <div class="grid-item-theme" id="align-right">See all</div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <ion-scroll direction="x" class="grid-row">
+
+        <div class="grid-item grid-{{color.color}}" ng-repeat="color in trending">
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color, color.rgb)" />
+          <div class="grid-item-content">
+            {{color.label}}
+          </div>
+        </div>
+
+      </ion-scroll>
+
+      <div class="trending-above-palette need-space">
+        <div class="grid-item-theme" id="align-left">Newly Added</div>
+        <div class="grid-item-theme" id="align-right">See all</div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <ion-scroll direction="x" class="grid-row">
+
+        <div class="grid-item grid-{{color.color}}" ng-repeat="color in newlyadded">
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+          <div class="grid-item-content">
+            {{color.label}}
+          </div>
+        </div>
+
+      </ion-scroll>
+
+      <div class="trending-above-palette need-space">
+        <div class="grid-item-theme" id="align-left">All Warm Colors</div>
+        <div class="grid-item-theme" id="align-right">See all</div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <ion-scroll direction="x" class="grid-row">
+
+        <div class="grid-item grid-{{color.color}}" ng-repeat="color in allwarm">
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+          <div class="grid-item-content">
+            {{color.label}}
+          </div>
+        </div>
+
+      </ion-scroll>
+
+
+    </ion-scroll>
+
   </ion-content>
 </ion-view>

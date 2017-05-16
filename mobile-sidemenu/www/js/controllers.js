@@ -127,6 +127,35 @@ angular.module('starter.controllers', [])
         console.log('failure');
       });
     };
+
+    $scope.current = 'original';
+    $scope.trending = [
+      {color: 'beige', label: 'Beige', rgb: 'FFFFAA'},
+      {color: 'camel', label: 'Camel', rgb: 'FFDD00'},
+      {color: 'salmon', label: 'Salmon Pink', rgb: 'FFB2B2'},
+      {color: 'navajo', label: 'Navajo White', rgb: 'FFC800'},
+      {color: 'niagara', label: 'Niagara', rgb: '9BD6FF'},
+      {color: 'primrose', label: 'Primrose', rgb: 'FFCF00'},
+      {color: 'lapis', label: 'Lapis Blue', rgb: 'A4A7FF'}
+    ];
+
+    $scope.newlyadded = [
+      {color: 'pale', label: 'Pale Blue'},
+      {color: 'moss', label: 'Moss Green'},
+      {color: 'melon', label: 'Melon'},
+      {color: 'chiffon', label: 'Chiffon'},
+
+    ];
+
+    $scope.allwarm = [
+      {color: 'ivory', label: 'Ivory'}
+    ];
+
+    $scope.setColor = function(color, rgb){
+      $scope.current = color;
+      $scope.sendColor( rgb );
+    }
+
   })
   .factory('BLE', function($q) {
 
