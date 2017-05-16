@@ -1,50 +1,51 @@
 #include <SoftwareSerial.h>
+SoftwareSerial mySerial(0, 1);
+
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+  #include <avr/power.h>
+#endif
+
 #define LED_PIN 13
+#define PIN            9
+#define NUMPIXELS      60
 
-SoftwareSerial mySerial(0, 1); // RX, TX  
-// Connect HM10      Arduino Uno
-//     Pin 1/TXD          Pin 7
-//     Pin 2/RXD          Pin 8
-bool blinking = false;
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-void setup() {  
+void setup() {
   Serial.begin(9600);
-  // If the baudrate of the HM-10 module has been updated,
-  // you may need to change 9600 by another value
-  // Once you have found the correct baudrate,
-  // you can update it using AT+BAUDx command 
-  // e.g. AT+BAUD0 for 9600 bauds
   mySerial.begin(9600);
+  pixels.begin(); // This initializes the NeoPixel library.
 }
 
-void loop() {  
+void loop() {
   String c;
-  
+  char red[3] = "rr";
+  char green[3] = "gg";
+  char blue[3] = "bb";
   if (mySerial.available()) {
-    c = mySerial.readStringUntil('\n');  
+    c = mySerial.readStringUntil('\n');
+    String rH = c.substring(0,2);
+    String gH = c.substring(2,4);
+    String bH = c.substring(4,6);
+    rH.toCharArray(red, 3);
+    gH.toCharArray(green, 3);
+    bH.toCharArray(blue, 3);
     Serial.println("Got input:");
-    if (c == "ON")
-    {
-      // Non-zero input means "turn on LED".
-      Serial.println("  on");
-      digitalWrite(LED_PIN, HIGH);
-      blinking = false;
-    } else if( c == "BLINK" ) {
-       blinking = true;
+    Serial.println( c );
+    Serial.println( red );
+    Serial.println( StrToHex(red) );
+    Serial.println( StrToHex(green) );
+    Serial.println( StrToHex(blue) );
+    for(int i=0;i<NUMPIXELS;i++){
+        if( i % 3 == 0 ){
+            pixels.setPixelColor(i, pixels.Color(StrToHex(red),StrToHex(green),StrToHex(blue)));
+        }
     }
-    else
-    {
-      // Input value zero means "turn off LED".
-      Serial.println("  off");
-      digitalWrite(LED_PIN, LOW);
-      blinking = false;
-    }  
+    pixels.show();
   }
-
-  if( blinking ) {
-    digitalWrite(LED_PIN, HIGH);
-    delay(200);
-    digitalWrite(LED_PIN, LOW);
-    delay(300);
-  }
+}
+int StrToHex(char str[])
+{
+  return (int) strtol(str, 0, 16);
 }
