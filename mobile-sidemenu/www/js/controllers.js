@@ -46,25 +46,48 @@ angular.module('starter.controllers', [])
     }
     $scope.current = 'original';
     $scope.trending = [
-      {color: 'beige', label: 'Beige'},
-      {color: 'camel', label: 'Camel'},
-      {color: 'salmon', label: 'Salmon Pink'},
-      {color: 'navajo', label: 'Navajo White'},
-      {color: 'niagara', label: 'Niagara'},
-      {color: 'primrose', label: 'Primrose'},
-      {color: 'lapis', label: 'Lapis Blue'}
+      {color: 'beige', label: 'Beige', RGB: (245,245,220)},
+      {color: 'camel', label: 'Camel', RGB: (194,155,104)},
+      {color: 'salmon', label: 'Salmon Pink', RGB: (255,152,151)},
+      {color: 'navajo', label: 'Navajo White', RGB: (255,223,170)},
+      {color: 'niagara', label: 'Niagara', RGB: (82,131,165)},
+      {color: 'primrose', label: 'Primrose', RGB: (247,210,72)},
+      {color: 'lapis', label: 'Lapis Blue', RGB: (0,73,143)}
     ];
 
         $scope.newlyadded = [
-      {color: 'pale', label: 'Pale Blue'},
-      {color: 'moss', label: 'Moss Green'},
-      {color: 'melon', label: 'Melon'},
-      {color: 'chiffon', label: 'Chiffon'},
-
+      {color: 'pale', label: 'Pale Blue', RGB: (173,238,239)},
+      {color: 'moss', label: 'Moss Green', RGB: (172,224,171)},
+      {color: 'melon', label: 'Melon', RGB: (254,188,179)},
+      {color: 'chiffon', label: 'Chiffon', RGB: (255,251,203)},
+      {color: 'island', label: 'Island', RGB: (146,222,228)},
+      {color: 'dogwood', label: 'Dogwood', RGB: (238,205,193)},
+      {color: 'greenery', label: 'Greenery', RGB: (135,177,68)}
     ];
 
         $scope.allwarm = [
-      {color: 'ivory', label: 'Ivory'}
+      {color: 'ivory', label: 'Ivory', RGB: (255,255,239)},
+      {color: 'honeydew', label: 'Honeydew', RGB: (240,255,239)},
+      {color: 'lavender', label: 'Lavender', RGB: (230,230,251)},
+      {color: 'canary', label: 'Canary', RGB: (255,255,147)},
+      {color: 'hazelnut', label: 'Hazelnut', RGB: (240,214,191)},
+      {color: 'kale', label: 'Kale', RGB: (199,222,183)},
+      {color: 'sharkskin', label: 'Sharkskin', RGB: (201,205,218)}
+    ];
+
+        $scope.bold = [
+      {color: 'original', label: 'Red', RGB: (255,0,0)},
+      {color: 'lime', label: 'Lime', RGB: (0,255,0)},
+      {color: 'blue', label: 'Blue', RGB: (0,0,255)},
+      {color: 'yellow', label: 'Yellow', RGB: (255,255,0)},
+      {color: 'cyan', label: 'Cyan', RGB: (0,255,255)},
+      {color: 'magenta', label: 'Magenta', RGB: (255,0,255)},
+      {color: 'maroon', label: 'Maroon', RGB: (128,0,0)},
+      {color: 'olive', label: 'Olive', RGB: (128,128,0)},
+      {color: 'green', label: 'Green', RGB: (0,128,0)},
+      {color: 'purple', label: 'Purple', RGB: (128,0,128)},
+      {color: 'teal', label: 'Teal', RGB: (0,128,128)},
+      {color: 'navy', label: 'Navy', RGB: (0,0,128)}
     ];
 
     $scope.setColor = function(color){
