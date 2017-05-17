@@ -26,8 +26,8 @@
       <a class="tab-item">
         Pattern
       </a>
-      <a class="tab-item">
-        Activity
+      <a class="tab-item" ng-click="setColor(null, 'TCS347')">
+        Scan
       </a>
       <a class="tab-item">
       </a>
@@ -67,7 +67,7 @@
       <ion-scroll direction="x" class="grid-row">
 
         <div class="grid-item grid-{{color.color}}" ng-repeat="color in newlyadded">
-          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color, color.rgb)" />
           <div class="grid-item-content">
             {{color.label}}
           </div>
@@ -84,7 +84,24 @@
       <ion-scroll direction="x" class="grid-row">
 
         <div class="grid-item grid-{{color.color}}" ng-repeat="color in allwarm">
-          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color, color.rgb)" />
+          <div class="grid-item-content">
+            {{color.label}}
+          </div>
+        </div>
+
+      </ion-scroll>
+
+      <div class="trending-above-palette need-space">
+        <div class="grid-item-theme" id="align-left">Bold Colors</div>
+        <div class="grid-item-theme" id="align-right">See all</div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <ion-scroll direction="x" class="grid-row">
+
+        <div class="grid-item grid-{{color.color}}" ng-repeat="color in bold">
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color, color.rgb)" />
           <div class="grid-item-content">
             {{color.label}}
           </div>
