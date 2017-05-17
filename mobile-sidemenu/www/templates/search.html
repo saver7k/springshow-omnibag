@@ -92,6 +92,23 @@
 
       </ion-scroll>
 
+        <div class="trending-above-palette need-space">
+          <div class="grid-item-theme" id="align-left">Bold Colors</div>
+          <div class="grid-item-theme" id="align-right">See all</div>
+          <div style="clear: both;"></div>
+        </div>   
+
+       <ion-scroll direction="x" class="grid-row">
+
+        <div class="grid-item grid-{{color.color}}" ng-repeat="color in bold">
+          <img src="img/bp/{{color.color}}_color.png" alt="" class="grid-item-img" ng-click="setColor(color.color)" />
+          <div class="grid-item-content">
+            {{color.label}}
+          </div>
+        </div>
+
+      </ion-scroll>
+
 
     </ion-scroll>
 
